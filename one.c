@@ -2,7 +2,7 @@
 int main()
 {
 
-    int x = -1, y = 20, z;
-    z = ++x || ++y;
-    printf("%d %d %d", x, y, z);
+    int x;
+    x = 10, 20, 30;
+    printf("%d", x);
 }
