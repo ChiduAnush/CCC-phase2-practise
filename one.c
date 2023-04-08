@@ -1,16 +1,9 @@
 #include <stdio.h>
 int main()
 {
-
-    // control structures:
-    // write a program without semicolon
-
-    char c;
-    scanf("%c", &c);
-    if ((c >= 'A' && c <= 'Z') || (c >= 97 && c <= 122))
-        printf("latter");
-    else if (c >= '0' && c <= '9')
-        printf("digit");
-    else
-        printf("symbol");
+    // switch case
 }
+// switch qorks only with int and int compatible types.
+// case labels must be pure constants.
+// duplicate case values are not accepted.
+// we can have default case anywhere in the switch.
