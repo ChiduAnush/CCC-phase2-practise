@@ -7,5 +7,7 @@ int main()
 
     if (printf("Hello SRM"))
     {
+        printf(" KTR");
     }
+    printf(" RMP");
 }
