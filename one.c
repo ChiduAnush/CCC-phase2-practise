@@ -1,33 +1,33 @@
 #include <stdio.h>
 #include <math.h>
+
+int isprime(unsigned long n)
+{
+    if (n == 2 || n == 3)
+        return 1;
+    if (n == 1 || n % 2 == 0 || n % 3 == 0)
+        return 0;
+
+    unsigned long x = sqrt(n);
+    for (unsigned long i = 5; i <= x; i += 6)
+    {
+        if (n % i == 0 || n % (i + 2) == 0)
+            return 0;
+    }
+    return 1;
+}
+
 int main()
 {
 
-    // from point 1
-    int n;
-    scanf("%d", &n);
-    int flag = 0, x = sqrt(n);
+    // another logic: from point 2.
+    // very very optimised one.
+    unsigned long n;
+    scanf("%ld", &n);
 
-    for (int i = 2; i <= x; i++)
+    if (isprime(n))
     {
-        if (n % i == 0)
-        {
-            flag = 1;
-            break;
-        }
-    }
-
-    if (flag == 0)
-    {
-
-        if (n == 1)
-        {
-            printf("1 is neither prime nor composite");
-        }
-        else
-        {
-            printf("Its a prime");
-        }
+        printf("prime");
     }
     else
     {
@@ -42,3 +42,6 @@ int main()
 // So, any number u can call its prime, if it doesnt have a factor from 2 to sqrt n.
 
 // 2. Other than 2, 3, every prime can be expressed as 6*i +- 1 . (but 6*i +- 1 may or may not be prime).
+
+// all prime numbers are positive. there are no negetive primes.
+//  unsigned long is faster than signed, as thers no need to verify the sign bit in unsigned.
