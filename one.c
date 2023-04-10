@@ -42,6 +42,7 @@ int main()
 // So, any number u can call its prime, if it doesnt have a factor from 2 to sqrt n.
 
 // 2. Other than 2, 3, every prime can be expressed as 6*i +- 1 . (but 6*i +- 1 may or may not be prime).
+// this formula works only for 5 and greater numbers.
 
 // all prime numbers are positive. there are no negetive primes.
 //  unsigned long is faster than signed, as thers no need to verify the sign bit in unsigned.
