@@ -1,42 +1,19 @@
 #include <stdio.h>
-#include <math.h>
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-
-    int a[n];
-    for (int i = 0; i < n; i++)
+    char s[1005];
+    scanf("%s", s);
+    int a[26] = {0};
+    for (int i = 0; s[i]; i++)
     {
-        scanf("%d", &a[i]);
+        a[s[i] - 97]++;
+    }
+    for (int i = 0; i < 26; i++)
+    {
+        if (a[i])
+            printf("%c : %d\n", i + 97, a[i]);
     }
 
-    int low = 0, mid = 0, high = n - 1;
-    while (mid <= high)
-    {
-        if (a[mid] == 0)
-        {
-            int t = a[low];
-            a[low] = a[mid];
-            a[mid] = t;
-            mid++;
-            low++;
-        }
-        else if (a[mid] == 1)
-        {
-            mid++;
-        }
-        else
-        {
-            int t = a[high];
-            a[high] = a[mid];
-            a[mid] = t;
-            high--;
-        }
-    }
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d", a[i]);
-    }
+    return 0;
 }
